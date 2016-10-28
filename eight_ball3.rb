@@ -61,11 +61,13 @@ def reset
 end
 
 def answer_bank
+  @combined_bank = []
   @answer_options2 = @answer_options.clone
   @user_array2 = @user_array.clone
   @combined_bank << @answer_options2.concat(@user_array2)
+  @combined_bank = @combined_bank.flatten
   puts "---Answer Bank---"
-  @combined_bank.flatten.each do |bank|
+  @combined_bank.each do |bank|
     puts bank
   end
 end
